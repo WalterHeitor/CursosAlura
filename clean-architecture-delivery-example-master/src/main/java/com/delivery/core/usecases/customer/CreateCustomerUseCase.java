@@ -3,6 +3,9 @@ package com.delivery.core.usecases.customer;
 import com.delivery.core.domain.Customer;
 import com.delivery.core.domain.EmailAlreadyUsedException;
 import com.delivery.core.usecases.UseCase;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
 
 public class CreateCustomerUseCase extends UseCase<CreateCustomerUseCase.InputValues, CreateCustomerUseCase.OutputValues> {
@@ -29,6 +32,7 @@ public class CreateCustomerUseCase extends UseCase<CreateCustomerUseCase.InputVa
     }
 
     @Value
+    @Data @Getter @Setter
     public static class InputValues implements UseCase.InputValues{
         private final String name;
         private final String email;
